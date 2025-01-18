@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Analizados</title>
+</head>
+<body>
+    <h1>Resultados Analizados</h1>
+    <p>Resultados Analizados de la imagen:</p>
+    <img src="{{ image_url }}" alt="Analyzed" width="300" style="border: 1px solid #ddd; margin-bottom: 20px;">
+    <ul>
+        {% for tag in tags %}
+        <li>{{ tag['tag']['en'] }} - Confidence: {{ tag['confidence'] }}%</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go Back</a>
+</body>
+</html>

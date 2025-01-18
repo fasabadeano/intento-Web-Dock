@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Imagen Analizada</title>
+</head>
+<body>
+    <h1>Bienvenido Analiza tu imagen</h1>
+    <p>Selecciona la imagen para analizar:</p>
+    <div>
+        {% for image in images %}
+        <div style="margin-bottom: 20px;">
+            <img src="{{ image }}" alt="Image" width="300" style="border: 1px solid #ddd;">
+            <form action="/analyze" method="post">
+                <input type="hidden" name="image_url" value="{{ image }}">
+                <button type="submit">Analizar</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
